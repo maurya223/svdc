@@ -1,0 +1,204 @@
+<!-- ================= Footer Section ================= -->
+{% load static %}
+<footer class="clinic-footer">
+  <div class="container">
+    <div class="footer-content">
+        <div class="footer-section">
+        <img src="{% static 'img/logo.png' %}" alt="SmileCare Logo" width="80" height="80" class="footer-logo">
+       
+      </div>
+
+
+      <!-- About Section -->
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <p>
+          At SmileCare Dental Clinic, we provide gentle, high-quality dental care using
+          modern technology to ensure every smile is bright, confident, and healthy.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/appointments">Book Appointment</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div class="footer-section">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms & Conditions</a></li>
+          <li><a href="/disclaimer">Disclaimer</a></li>
+          <li><a href="/cookies">Cookie Policy</a></li>
+        </ul>
+      </div>
+
+      <!-- Support -->
+      <div class="footer-section">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="/help">Help Center</a></li>
+          <li><a href="/faqs">FAQs</a></li>
+          <li><a href="/feedback">Feedback</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-section contact">
+        <h3>Contact Info</h3>
+        <p>Email: <a href="mailto:info@smilecare.com">shreevirajdentalclinics@gmail.com</a></p>
+        <p>Phone: <a href="tel:+918285896511">+91 8285896511</a></p>
+        <p>Address: shop no.101,metro pillar no.30 Noida New Delhi, india</p>
+
+        <!-- Social Icons -->
+        <div class="social-icons">
+          <a href="https://facebook.com"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+          <a href="https://linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://whatsapp.com"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://youtube.com"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+    <p class="footer-bottom">© 2025 SmileCare Dental Clinic. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- FontAwesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- ================= Footer Styles ================= -->
+<style>
+/* Overall Footer */
+.clinic-footer {
+  background-color: #0a3d62;
+  color: #fff;
+  padding: 50px 20px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Footer Container */
+.clinic-footer .container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Grid Layout */
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+}
+
+/* Footer Sections */
+.footer-section h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  border-bottom: 2px solid #38ada9;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.footer-section p {
+  color: #dcdde1;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 8px 0;
+}
+
+.footer-section ul li a {
+  color: #dcdde1;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #38ada9;
+}
+
+/* Logo */
+.footer-logo {
+  display: block;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+/* Social Icons */
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 18px;
+  margin-right: 10px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #38ada9;
+  transform: scale(1.2);
+}
+
+/* Divider Line */
+.clinic-footer hr {
+  border: none;
+  height: 1px;
+  background: #38ada9;
+  margin: 30px 0 20px;
+}
+
+/* Bottom Text */
+.footer-bottom {
+  text-align: center;
+  font-size: 14px;
+  color: #dcdde1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+  }
+
+  .footer-section h3 {
+    font-size: 16px;
+  }
+
+  .footer-section p,
+  .footer-section ul li a {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .social-icons a {
+    margin-right: 8px;
+  }
+}
+</style>

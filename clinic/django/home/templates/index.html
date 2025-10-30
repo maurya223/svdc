@@ -1,0 +1,429 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home - Shree Viraj Dental Clinic{% endblock title %}
+
+{% block body %}
+<!-- Hero Section as Carousel -->
+<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+
+    <!-- Slide 1 -->
+    <div class="carousel-item active">
+      <section class="hero-section" style="
+          background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('{% static "img/ist.jpg" %}');
+          background-size: cover;
+          background-position: center;
+          height: 70vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          color: white;
+          position: relative;
+      ">
+        <div style="max-width: 800px; padding: 0 20px;">
+          <h1 style="font-size: 3.5rem; font-weight: bold; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+            Welcome to Shree Viraj Dental Clinic
+          </h1>
+          <p style="font-size: 1.5rem; margin-bottom: 30px; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
+            Your Trusted Partner for Healthy Smiles and Advanced Dental Care
+          </p>
+          <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+            <a href="{% url 'appointment' %}" class="btn" style="
+              display: inline-block;
+              padding: 15px 30px;
+              background: linear-gradient(90deg, #0d6efd, #198754);
+              color: white;
+              font-weight: bold;
+              border: none;
+              border-radius: 50px;
+              text-decoration: none;
+              font-size: 1.2rem;
+              transition: all 0.3s ease;
+              box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            "
+            onmouseover="this.style.background='linear-gradient(90deg, #0b5ed7, #146c43)'; this.style.transform='translateY(-3px)';"
+            onmouseout="this.style.background='linear-gradient(90deg, #0d6efd, #198754)'; this.style.transform='translateY(0)';"
+            >
+              Book Your Appointment Today
+            </a>
+
+            <a href="{% url 'services' %}" class="btn" style="
+              display: inline-block;
+              padding: 15px 30px;
+              background: linear-gradient(90deg, #ffc107, #fd7e14);
+              color: white;
+              font-weight: bold;
+              border: none;
+              border-radius: 50px;
+              text-decoration: none;
+              font-size: 1.2rem;
+              transition: all 0.3s ease;
+              box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            "
+            onmouseover="this.style.background='linear-gradient(90deg, #e0a800, #d46a00)'; this.style.transform='translateY(-3px)';"
+            onmouseout="this.style.background='linear-gradient(90deg, #ffc107, #fd7e14)'; this.style.transform='translateY(0)';"
+            >
+              Check Your Teeth
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="carousel-item">
+      <section class="hero-section" style="
+          background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('{% static "img/me.jpg" %}');
+          background-size: cover;
+          background-position: center;
+          height: 70vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          color: white;
+          position: relative;
+      ">
+        <div style="max-width: 800px; padding: 0 20px;">
+          <h1 style="font-size: 3.5rem; font-weight: bold; margin-bottom: 20px;">
+            Advanced Dental Treatments
+          </h1>
+          <p style="font-size: 1.5rem; margin-bottom: 30px;">
+            Modern technology for a brighter and healthier smile
+          </p>
+          <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+            <a href="{% url 'appointment' %}" class="btn" style="
+              display: inline-block;
+              padding: 15px 30px;
+              background: linear-gradient(90deg, #0d6efd, #198754);
+              color: white;
+              font-weight: bold;
+              border: none;
+              border-radius: 50px;
+              text-decoration: none;
+              font-size: 1.2rem;
+              transition: all 0.3s ease;
+              box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            "
+            onmouseover="this.style.background='linear-gradient(90deg, #0b5ed7, #146c43)'; this.style.transform='translateY(-3px)';"
+            onmouseout="this.style.background='linear-gradient(90deg, #0d6efd, #198754)'; this.style.transform='translateY(0)';"
+            >
+              Book Your Appointment Today
+            </a>
+
+            <a href="{% url 'services' %}" class="btn" style="
+              display: inline-block;
+              padding: 15px 30px;
+              background: linear-gradient(90deg, #ffc107, #fd7e14);
+              color: white;
+              font-weight: bold;
+              border: none;
+              border-radius: 50px;
+              text-decoration: none;
+              font-size: 1.2rem;
+              transition: all 0.3s ease;
+              box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            "
+            onmouseover="this.style.background='linear-gradient(90deg, #e0a800, #d46a00)'; this.style.transform='translateY(-3px)';"
+            onmouseout="this.style.background='linear-gradient(90deg, #ffc107, #fd7e14)'; this.style.transform='translateY(0)';"
+            >
+              Check Your Teeth
+            </a>
+          </div>
+        </div>
+        
+      </section>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="carousel-item">
+      <section class="hero-section" style="
+          background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('{% static "img/real.jpg" %}');
+          background-size: cover;
+          background-position: center;
+          height: 70vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          color: white;
+          position: relative;
+      ">
+        <div style="max-width: 800px; padding: 0 20px;">
+          <h1 style="font-size: 3.5rem; font-weight: bold; margin-bottom: 20px;">
+            Caring for All Ages
+          </h1>
+          <p style="font-size: 1.5rem; margin-bottom: 30px;">
+            Gentle care for children, adults, and seniors
+          </p>
+          <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+            <a href="{% url 'appointment' %}" class="btn" style="
+              display: inline-block;
+              padding: 15px 30px;
+              background: linear-gradient(90deg, #0d6efd, #198754);
+              color: white;
+              font-weight: bold;
+              border: none;
+              border-radius: 50px;
+              text-decoration: none;
+              font-size: 1.2rem;
+              transition: all 0.3s ease;
+              box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            "
+            onmouseover="this.style.background='linear-gradient(90deg, #0b5ed7, #146c43)'; this.style.transform='translateY(-3px)';"
+            onmouseout="this.style.background='linear-gradient(90deg, #0d6efd, #198754)'; this.style.transform='translateY(0)';"
+            >
+              Book Your Appointment Today
+            </a>
+
+            <a href="{% url 'services' %}" class="btn" style="
+              display: inline-block;
+              padding: 15px 30px;
+              background: linear-gradient(90deg, #ffc107, #fd7e14);
+              color: white;
+              font-weight: bold;
+              border: none;
+              border-radius: 50px;
+              text-decoration: none;
+              font-size: 1.2rem;
+              transition: all 0.3s ease;
+              box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            "
+            onmouseover="this.style.background='linear-gradient(90deg, #e0a800, #d46a00)'; this.style.transform='translateY(-3px)';"
+            onmouseout="this.style.background='linear-gradient(90deg, #ffc107, #fd7e14)'; this.style.transform='translateY(0)';"
+            >
+              Check Your Teeth
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </div>
+
+  <!-- Carousel Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+
+<!-- Why Choose Us Section -->
+<section style="padding: 80px 0; background-color: #ffffff;">
+  <div class="container" style="max-width: 1140px; margin: auto;">
+    <h2 style="text-align: center; font-size: 2.5rem; font-weight: bold; color: #0d6efd; margin-bottom: 50px;">
+      Why Choose Shree Viraj Dental Clinic?
+    </h2>
+    <div class="row" style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
+      <div class="col-md-4" style="flex: 1 1 300px; text-align: center;">
+        <img src="{% static 'img/logo.png' %}" alt="Experienced Team" style="width: 80px; height: 80px; margin-bottom: 20px;">
+        <h4 style="color: #0d6efd; margin-bottom: 15px;">Experienced Dentists</h4>
+        <p style="color: #6c757d; font-size: 1rem; line-height: 1.6;">
+          Our team of qualified professionals with over 15 years of experience ensures top-quality care tailored to your needs.
+        </p>
+      </div>
+      <div class="col-md-4" style="flex: 1 1 300px; text-align: center;">
+        <img src="{% static 'img/about.jpeg' %}" alt="Modern Technology" style="width: 80px; height: 80px; margin-bottom: 20px; border-radius: 50%;">
+        <h4 style="color: #0d6efd; margin-bottom: 15px;">Advanced Technology</h4>
+        <p style="color: #6c757d; font-size: 1rem; line-height: 1.6;">
+          We use the latest dental equipment and techniques for painless, efficient treatments.
+        </p>
+      </div>
+      <div class="col-md-4" style="flex: 1 1 300px; text-align: center;">
+        <img src="{% static 'img/patientcare.png' %}" alt="Patient Comfort" style="width: 80px; height: 80px; margin-bottom: 20px; border-radius: 50%;">
+        <h4 style="color: #0d6efd; margin-bottom: 15px;">Patient-Centered Care</h4>
+        <p style="color: #6c757d; font-size: 1rem; line-height: 1.6;">
+          Your comfort and satisfaction are our top priorities. We create a welcoming environment for all patients.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Carousel -->
+<section style="padding: 80px 0; background-color: #f8f9fa;">
+  <div class="container" style="max-width: 1140px; margin: auto;">
+    <h2 style="text-align: center; font-size: 2.5rem; font-weight: bold; color: #3d3e3e; margin-bottom: 50px;">
+      Our Popular Services
+    </h2>
+    <div id="servicesCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row" style="display: flex; justify-content: center; gap: 30px;">
+            <div class="col-md-4" style="background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center;">
+              <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0" alt="Teeth Cleaning" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
+              <h4 style="color: #0d6efd;">Teeth Cleaning & Polishing</h4>
+              <p style="color: #6c757d;">Maintain optimal oral health with our professional cleaning services.</p>
+              <a href="{% url 'services' %}" class="btn btn-outline-primary">Learn More</a>
+            </div>
+            <div class="col-md-4" style="background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center;">
+              <img src="https://s16736.pcdn.co/wp-content/uploads/sites/326/2017/02/Teeth-Whitening-768x735.jpg.optimal.jpg" alt="Teeth Whitening" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
+              <h4 style="color: #0d6efd;">Teeth Whitening</h4>
+              <p style="color: #6c757d;">Achieve a brighter, more confident smile with safe whitening treatments.</p>
+              <a href="{% url 'services' %}" class="btn btn-outline-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row" style="display: flex; justify-content: center; gap: 30px;">
+            <div class="col-md-4" style="background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center;">
+              <img src="https://domf5oio6qrcr.cloudfront.net/medialibrary/16407/gettyimages-1543511026.jpg" alt="Root Canal" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
+              <h4 style="color: #0d6efd;">Root Canal Treatment</h4>
+              <p style="color: #6c757d;">Save your natural teeth with our gentle root canal procedures.</p>
+              <a href="{% url 'services' %}" class="btn btn-outline-primary">Learn More</a>
+            </div>
+            <div class="col-md-4" style="background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center;">
+              <img src="https://www.thantakit.com/wp-content/uploads/2017/03/admin-ajax-37.jpeg" alt="Dental Implants" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
+              <h4 style="color: #0d6efd;">Dental Implants</h4>
+              <p style="color: #6c757d;">Permanent replacement for missing teeth with natural-looking results.</p>
+              <a href="{% url 'services' %}" class="btn btn-outline-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#servicesCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <div style="text-align: center; margin-top: 40px;">
+      <a href="{% url 'services' %}" class="btn btn-primary btn-lg">View All Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- About Snippet -->
+<section style="padding: 80px 0; background-color: #ffffff;">
+  <div class="container" style="max-width: 1140px; margin: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 50px;">
+    <div style="flex: 1 1 45%;">
+      <img src="{% static 'img/about.jpeg' %}" alt="Clinic Interior" class="img-fluid" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+    </div>
+    <div style="flex: 1 1 50%;">
+      <h2 style="color: #0d6efd; font-size: 2.5rem; font-weight: bold; margin-bottom: 20px;">
+        About Our Clinic
+      </h2>
+      <p style="color: #6c757d; font-size: 1.1rem; line-height: 1.7; margin-bottom: 25px;">
+        Established in 2014, Shree Viraj Dental Clinic has been a pillar of excellence in dental care for over a decade. We specialize in comprehensive treatments using state-of-the-art technology to ensure precision and comfort.
+      </p>
+      <p style="color: #6c757d; font-size: 1.1rem; line-height: 1.7; margin-bottom: 30px;">
+        Led by Dr. Shashank, BDS, our team is dedicated to providing personalized care that prioritizes your oral health and overall well-being.
+      </p>
+      <a href="{% url 'about' %}" class="btn btn-primary">Learn More About Us</a>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Chat Bubble -->
+<div id="chat-bubble" onclick="toggleChat()" style="
+    width: 70px; height: 70px;
+    background: linear-gradient(90deg, #0d6efd, #198754);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 1.8rem; font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px;
+    z-index: 9999;
+">💬</div>
+
+<!-- Chat Window -->
+<div id="chat-box" style="
+    display: none;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    width: 320px;
+    position: fixed;
+    bottom: 100px; 
+    right: 20px;
+    z-index: 9999;
+    text-align: left;
+    padding: 15px;
+">
+  <div id="chat-window" style="height: 300px; overflow-y: auto; padding-right: 10px;">
+    <div style="margin-bottom: 15px;">
+      <div style="background: #e9ecef; display: inline-block; padding: 10px 15px; border-radius: 20px;">
+        Hello! 👋 I’m your Dental Assistant. How can I help you today?
+      </div>
+    </div>
+  </div>
+  <div style="display: flex; margin-top: 15px;">
+    <input type="text" id="user-input" placeholder="Type your message..."
+      style="flex: 1; padding: 12px; border: 1px solid #ddd; border-radius: 30px; outline: none;">
+    <button onclick="sendMessage()" style="
+        background: linear-gradient(90deg, #0d6efd, #198754);
+        color: white;
+        border: none;
+        border-radius: 30px;
+        padding: 12px 20px;
+        margin-left: 10px;
+        cursor: pointer;
+    ">
+      Send
+    </button>
+  </div>
+</div>
+
+<script>
+  function toggleChat() {
+    const chatBox = document.getElementById("chat-box");
+    chatBox.style.display = (chatBox.style.display === "none" || chatBox.style.display === "") ? "block" : "none";
+  }
+
+  function sendMessage() {
+    let input = document.getElementById("user-input");
+    let message = input.value.trim();
+    if (message === "") return;
+
+    let chatWindow = document.getElementById("chat-window");
+
+    // User message
+    let userMsg = document.createElement("div");
+    userMsg.innerHTML = `<div style="background:#0d6efd; color:white; display:inline-block; padding:10px 15px; border-radius:20px; float:right; clear:both; margin-bottom:10px;">${message}</div>`;
+    chatWindow.appendChild(userMsg);
+
+    input.value = "";
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+
+    // Bot reply
+    setTimeout(() => {
+      let botMsg = document.createElement("div");
+      botMsg.innerHTML = `<div style="background:#e9ecef; display:inline-block; padding:10px 15px; border-radius:20px; clear:both; margin-bottom:10px;">Thanks for asking! Our team will get back to you soon 😊</div>`;
+      chatWindow.appendChild(botMsg);
+      chatWindow.scrollTop = chatWindow.scrollHeight;
+    }, 1000);
+  }
+</script>
+
+<!-- Call to Action -->
+<section style="padding: 60px 0; background: linear-gradient(90deg, #0d6efd, #198754); color: white; text-align: center;">
+  <div class="container">
+    <h2 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 20px;">
+      Ready to Transform Your Smile?
+    </h2>
+    
+    <p style="font-size: 1.2rem; margin-bottom: 30px;">
+      Schedule your consultation today and take the first step towards a healthier, brighter smile.
+    </p>
+    <a href="{% url 'appointment' %}" class="btn btn-light btn-lg" style="padding: 15px 40px; font-size: 1.2rem; border-radius: 50px;">
+      Get Started Now
+    </a>
+  </div>
+</section>
+{% endblock body %}

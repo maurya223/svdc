@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body %}
+<section style="padding: 60px 0; background-color: #ffffff;">
+  <div style="max-width: 1140px; margin: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 30px;">
+    
+    <!-- Left Image -->
+    <div style="flex: 1 1 45%;">
+      <img class="profile-user-img img-fluid img-circle" src="https://images.docindia.org/statimg/Images/Doc_Public_Prof_img/cda27b42-2589-406b-a598-1d8c15e33ec0file.png" alt="User profile picture" onerror="this.src='/assets/img/Listofdoctors/maleblankprofile.webp'">
+    </div>
+
+    <!-- Right Content -->
+    <div style="flex: 1 1 50%;">
+      <h2 style="color: #0d6efd; font-weight: bold; margin-bottom: 15px; font-size: 28px;">
+        About Shree Viraj Dental Clinic
+      </h2>
+      <p style="color: #6c757d; font-size: 16px; line-height: 1.6; margin-bottom: 20px;">
+        At Shree Viraj Dental Clinic, we believe a healthy smile is the key to confidence and well-being.
+        For over <strong>10 years</strong>, we have been serving our community with advanced dental treatments, 
+        modern technology, and a compassionate approach that makes every patient feel at home.
+      </p>
+
+      <p style="color: #6c757d; font-size: 16px; line-height: 1.6; margin-bottom: 25px;">
+        Founded in <strong>2014</strong>, our clinic began with a simple mission — to make quality dental care 
+        accessible, affordable, and stress-free. Our team of experienced dentists is committed to ensuring every 
+        patient leaves with a healthier smile and greater confidence.
+      </p>
+
+      <!-- Core Values -->
+      <ul style="list-style: none; padding: 0; margin-bottom: 25px;">
+        <li style="margin-bottom: 10px; font-size: 16px; color: #343a40;">
+          ✅ <strong>Excellence</strong> – Committed to the highest standards of dental care.
+        </li>
+        <li style="margin-bottom: 10px; font-size: 16px; color: #343a40;">
+          ✅ <strong>Compassion</strong> – Treating every patient like family.
+        </li>
+        <li style="margin-bottom: 10px; font-size: 16px; color: #343a40;">
+          ✅ <strong>Innovation</strong> – Using the latest tools and techniques.
+        </li>
+        <li style="font-size: 16px; color: #343a40;">
+          ✅ <strong>Trust</strong> – Transparent treatments and honest communication.
+        </li>
+      </ul>
+
+      <!-- Dentist Info -->
+      <div style="background-color: #f8f9fa; padding: 15px; border-left: 4px solid #0d6efd; border-radius: 5px; margin-bottom: 20px;">
+        <strong>Dr. 
+           Shashank 
+        </strong>, BDS, MAIDS – Dental surgery & pediatrick dentist  
+        <br>
+        With over <strong>15 years</strong> of experience, Dr. Anita specializes in painless treatments, smile design, and patient-focused care.
+      </div>
+
+      <!-- CTA -->
+      <a href="#contact" 
+         style="background-color: #0d6efd; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-size: 16px;">
+        our team
+      </a>
+    </div>
+  </div>
+</section>
+{% endblock body %}

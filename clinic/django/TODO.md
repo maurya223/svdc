@@ -1,0 +1,3 @@
+- [x] Update images in index.html service section to use images from services.html
+- [x] Fix patientcare.jpg to patientcare.png in index.html
+- [x] Fix title duplication in base.html

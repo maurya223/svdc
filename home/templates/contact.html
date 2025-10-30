@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% block title %}Contact{% endblock title %}
+
+{% block body %}
+<section class="contact-section py-5">
+  <div class="container">
+    <div class="row">
+      <!-- Contact Form -->
+      <div class="col-md-8">
+        <div class="contact-form-box p-4 shadow rounded">
+          <h2 class="mb-4 text-center">Get in Touch</h2>
+          <form action="{% url 'contact' %}" method="post" class="contact-form">
+            {% csrf_token %}
+            
+            <!-- Display messages (success/error) -->
+            {% if messages %}
+            <div class="messages mb-4">
+                {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="{{ form.name.id_for_label }}" class="form-label">{{ form.name.label }}</label>
+                {{ form.name }}
+                {% if form.name.errors %}
+                <div class="text-danger">{{ form.name.errors }}</div>
+                {% endif %}
+              </div>
+              <div class="col-md-6">
+                <label for="{{ form.email.id_for_label }}" class="form-label">{{ form.email.label }}</label>
+                {{ form.email }}
+                {% if form.email.errors %}
+                <div class="text-danger">{{ form.email.errors }}</div>
+                {% endif %}
+              </div>
+              <div class="col-md-6">
+                <label for="{{ form.phone.id_for_label }}" class="form-label">{{ form.phone.label }}</label>
+                {{ form.phone }}
+                {% if form.phone.errors %}
+                <div class="text-danger">{{ form.phone.errors }}</div>
+                {% endif %}
+              </div>
+              <div class="col-md-6">
+                <label for="{{ form.subject.id_for_label }}" class="form-label">{{ form.subject.label }}</label>
+                {{ form.subject }}
+                {% if form.subject.errors %}
+                <div class="text-danger">{{ form.subject.errors }}</div>
+                {% endif %}
+              </div>
+              <div class="col-12">
+                <label for="{{ form.message.id_for_label }}" class="form-label">{{ form.message.label }}</label>
+                {{ form.message }}
+                {% if form.message.errors %}
+                <div class="text-danger">{{ form.message.errors }}</div>
+                {% endif %}
+              </div>
+              <div class="col-12 text-center">
+                <button type="submit" class="btn btn-primary px-4">Send Now</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="col-md-4 mt-4 mt-md-0">
+       <div class="map-box shadow rounded overflow-hidden">
+<iframe id="mapFrame" width="100%" height="300" frameborder="0" style="border:0;" loading="lazy" allowfullscreen="" aria-hidden="false" tabindex="0" src="https://www.google.com/maps?q=MC%20Complex%20shop%20No.101%20Near%20Adidas%20Showroom%20MC%20complex%20Shree%20Viraj%20Dental%20Clinic%20%20Gautam%20Buddha%20Nagar%20Uttar%20Pradesh%20India%20&amp;output=embed"></iframe>
+</div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-section {
+    background: #f9f9f9;
+  }
+
+  .contact-form-box {
+    background: #fff;
+  }
+
+  .contact-form-box h2 {
+    font-weight: 700;
+    color: #071c34;
+  }
+
+  .form-control {
+    border-radius: 6px;
+    padding: 12px;
+  }
+
+  .btn-primary {
+    background: #fda40b;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+
+  .btn-primary:hover {
+    background: #071c34;
+  }
+
+  .map-box {
+    height: 100%;
+  }
+</style>
+{% endblock body %}

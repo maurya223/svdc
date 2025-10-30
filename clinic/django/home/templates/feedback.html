@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block title %}Feedback{% endblock %}
+
+{% block body %}
+<div class="feedback-container">
+    <h2>Feedback</h2>
+
+    <!-- Display messages (success/error) -->
+    {% if messages %}
+    <div class="messages mb-4">
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <form method="post" action="{% url 'feedback' %}" class="feedback-form">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
+            {{ form.name }}
+            {% if form.name.errors %}
+            <div class="text-danger">{{ form.name.errors }}</div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+            {{ form.email }}
+            {% if form.email.errors %}
+            <div class="text-danger">{{ form.email.errors }}</div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.message.id_for_label }}">{{ form.message.label }}</label>
+            {{ form.message }}
+            {% if form.message.errors %}
+            <div class="text-danger">{{ form.message.errors }}</div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.rating.id_for_label }}">{{ form.rating.label }}</label>
+            {{ form.rating }}
+            {% if form.rating.errors %}
+            <div class="text-danger">{{ form.rating.errors }}</div>
+            {% endif %}
+        </div>
+        <button type="submit" class="submit-btn">Submit Feedback</button>
+    </form>
+</div>
+
+<style>
+    .feedback-container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 30px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    .form-control {
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 16px;
+    }
+    .submit-btn {
+        padding: 14px;
+        background: #2563eb;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+    .submit-btn:hover {
+        background: #1e40af;
+    }
+</style>
+
+{% endblock %}
