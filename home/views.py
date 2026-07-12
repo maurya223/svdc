@@ -93,52 +93,61 @@ def appointment(request):
         form = AppointmentForm()
     return render(request, 'appointment.html', {'form': form})
 
+
+
 def contact(request):
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            contact_obj = form.save()
-            try:
-                # Send contact email
-                email_subject = f'New Contact Inquiry: {contact_obj.subject}'
-                email_message = f"""
-                Name: {contact_obj.name}
-                Email: {contact_obj.email}
-                Phone: {contact_obj.phone}
-                Message: {contact_obj.message}
-                """
-                send_mail(
-                    email_subject,
-                    email_message,
-                    settings.DEFAULT_FROM_EMAIL,
-                    [settings.EMAIL_HOST_USER],
-                    fail_silently=False,
-                )
-                messages.success(request, 'Your message has been sent! We will get back to you soon.')
-                return redirect('contact_success')  # Or redirect to success
-            except BadHeaderError:
-                messages.error(request, 'Invalid header found.')
-            except Exception as e:
-                messages.error(request, f'Failed to send message: {str(e)}')
-                # Still save the contact even if email fails, as it's an inquiry
-        else:
-            messages.error(request, 'Please correct the errors below.')
-    else:
-        form = ContactForm()
-    return render(request, 'contact.html', {'form': form})
+
+    if request.method == "POST":
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        phone = request.POST.get("phone")
+        subject = request.POST.get("subject")
+        message = request.POST.get("message")
+
+        if not all([name, email, phone, subject, message]):
+            messages.error(request, "All fields are required.")
+            return redirect("contact")
+
+        Contact.objects.create(
+            name=name,
+            email=email,
+            phone=phone,
+            subject=subject,
+            message=message
+        )
+
+        messages.success(request, "Your message has been sent successfully.")
+        return redirect("contact")
+
+
+    return render(request, "contact.html")
+
 
 def feedback(request):
-    if request.method == 'POST':
-        form = FeedbackForm(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Thank you for your feedback!')
-            return redirect('feedback_success')  # Or redirect to success
-        else:
-            messages.error(request, 'Please correct the errors below.')
-    else:
-        form = FeedbackForm()
-    return render(request, 'feedback.html', {'form': form})
+    if request.method == "POST":
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        message = request.POST.get("message")
+
+        if not all([name, email, message]):
+            messages.error(request, "All fields are required.")
+            return redirect("feedback")
+
+       
+     
+
+        feedback.objects.create(
+            name=name,
+            email=email,
+            message=message,
+            
+        )
+
+
+        messages.success(request, "Thanks for your feedback!")
+        return redirect("feedback")
+
+    return render(request, "feedback.html")
 
 def appointment_success(request):
     return render(request, 'appointment_success.html')  # Create this template if needed, or use a message

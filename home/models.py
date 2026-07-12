@@ -51,3 +51,4 @@ class Feedback(models.Model):
 
     def __str__(self):
         return f"Feedback from {self.name} - Rating: {self.rating}"
+

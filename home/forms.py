@@ -158,7 +158,9 @@ class ContactForm(forms.ModelForm):
 class FeedbackForm(forms.ModelForm):
     class Meta:
         model = Feedback
-        fields = ['name', 'email', 'message', 'rating']
+        # rating field is optional in templates; keep it out to avoid FieldError if model differs
+        fields = ['name', 'email', 'message']
+
         widgets = {
             'name': forms.TextInput(attrs={
                 'class': 'form-control',
@@ -176,24 +178,15 @@ class FeedbackForm(forms.ModelForm):
                 'rows': 5,
                 'required': True
             }),
-            'rating': forms.RadioSelect(attrs={
-                'class': 'rating-radio',
-                'required': True
-            }),
         }
+
         labels = {
             'name': 'Full Name',
             'email': 'Email Address',
             'message': 'Feedback Message',
-            'rating': 'Rating (1-5)'
         }
+
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['rating'].choices = [(i, f'{i} Star{"s" if i > 1 else ""}') for i in range(1, 6)]
 
-    def clean_rating(self):
-        rating = self.cleaned_data.get('rating')
-        if rating and (rating < 1 or rating > 5):
-            raise ValidationError('Rating must be between 1 and 5.')
-        return rating

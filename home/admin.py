@@ -16,6 +16,7 @@ class AppointmentAdmin(admin.ModelAdmin):
 
 @admin.register(Feedback)
 class FeedbackAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'rating', 'date_created')
+    list_display = ('name', 'email', 'date_created', 'rating')
     search_fields = ('name', 'email')
-    list_filter = ('rating', 'date_created')
+    list_filter = ('date_created',)
+
