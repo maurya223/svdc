@@ -60,16 +60,16 @@ RUN touch /app/db.sqlite3 && \
     chmod -R 775 /app
 
 
-# Run as django user
-USER django
-
-
 # Database migration
 RUN python manage.py migrate
 
 
 # Collect static files
 RUN python manage.py collectstatic --noinput
+
+
+# Run application as django user
+USER django
 
 
 EXPOSE 8000
