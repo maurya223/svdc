@@ -6,6 +6,12 @@ from pathlib import Path
 from decouple import config
 import dj_database_url
 
+# WhiteNoise: use non-manifest storage in production to avoid 500s when a static file
+# is missing from the manifest during deploy.
+# This prevents errors like:
+# "Missing staticfiles manifest entry for 'img/logo.png'".
+
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -231,10 +237,7 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 STORAGES = {
 
     "staticfiles": {
-
-        "BACKEND":
-        "whitenoise.storage.CompressedManifestStaticFilesStorage",
-
+        "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",
     },
 
 }
